@@ -1,0 +1,21 @@
+<button
+  type="button"
+  class="{{style-namespace "ui/exercise-button"}} {{this.classes}}"
+  disabled={{this.isDisabled}}
+  ...attributes
+>
+  {{#if (has-block)}}
+    {{yield}}
+  {{else}}
+    <div class={{this.titleClasses}}>
+      {{@title}}
+    </div>
+  {{/if}}
+</button>
+<div style={{this.checkStyle}}>
+  <Ui::Icon::Check
+    @isCompleted={{this.isCompleted}}
+    @isLocked={{this.isLocked}}
+    @isDisabled={{this.isDisabled}}
+  />
+</div>
