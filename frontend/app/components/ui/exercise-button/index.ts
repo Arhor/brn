@@ -23,6 +23,10 @@ export default class UiExerciseButtonComponent extends Component<
     return this.args.mode === 'completed';
   }
 
+  get isActive() {
+    return this.args.mode === 'active';
+  }
+
   get isLocked() {
     return this.args.mode === 'locked';
   }

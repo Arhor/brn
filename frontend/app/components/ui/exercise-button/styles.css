@@ -23,14 +23,13 @@
   &:active {
     background: linear-gradient(92.58deg, rgba(70, 145, 253, 0.5) 54.88%, rgba(213, 176, 255, 0.5) 94.38%);
     border: none;
-    color: white;
-  }
+    color: white;   
+  }  
 
   &:disabled {
     color: rgb(128, 127, 127);
     border: rgb(199, 199, 199) solid 1px;
   }
-
 
   &.locked {
     background: #FFFFFF;
@@ -64,14 +63,6 @@
   .title-disabled, .title-disabled:active {
     color: #f4f4f4;
   }
-
-  div.check-container {
-    position: relative;
-    bottom: 191px;
-    right: -135px; 
-    background-color: red;  
-  }  
-
  
 
 /*! purgecss end ignore */
