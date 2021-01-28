@@ -63,6 +63,12 @@
   .title-disabled, .title-disabled:active {
     color: #f4f4f4;
   }
+
+  .check-container {
+    position: relative;
+    bottom: 180px;
+    left: 134px;
+  }
  
 
 /*! purgecss end ignore */

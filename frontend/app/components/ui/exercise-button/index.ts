@@ -41,8 +41,4 @@ export default class UiExerciseButtonComponent extends Component<
     }
     return 'title';
   }
-
-  get checkStyle() {
-    return 'position: relative; bottom: 191px; right: -135px;';
-  }
 }

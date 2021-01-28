@@ -11,12 +11,12 @@
       {{@title}}
     </div>
   {{/if}}
+  <div class="check-container">
+    <Ui::Icon::Check
+      @isCompleted={{this.isCompleted}}
+      @isLocked={{this.isLocked}}
+      @isDisabled={{this.isDisabled}}
+      @isActive={{this.isActive}}
+    />
+  </div>
 </button>
-<div style={{this.checkStyle}}>
-  <Ui::Icon::Check
-    @isCompleted={{this.isCompleted}}
-    @isLocked={{this.isLocked}}
-    @isDisabled={{this.isDisabled}}
-    @isActive={{this.isActive}}
-  />
-</div>
