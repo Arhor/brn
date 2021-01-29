@@ -68,10 +68,9 @@
   }
 
   .check-container {
-    position: relative;
-    bottom: 180px;
-    left: 134px;
+    position: absolute;
+    margin-left: 133px;
+    margin-top: -176px;  
   }
-
 
 /*! purgecss end ignore */
