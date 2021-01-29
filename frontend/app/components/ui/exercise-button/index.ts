@@ -1,8 +1,10 @@
 import Component from '@glimmer/component';
+import Exercise from 'brn/models/exercise';
 
 interface UiExerciseButtonComponentArguments {
   title?: string;
-  mode?: 'completed' | 'active' | 'locked' | 'disabled';
+  exercise: Exercise;
+  isAvailable: boolean;
 }
 
 export default class UiExerciseButtonComponent extends Component<
@@ -10,33 +12,49 @@ export default class UiExerciseButtonComponent extends Component<
 > {
   get classes() {
     let items = ['focus:outline-none'];
-    if (this.args.mode) {
-      items.push(this.args.mode);
+    if (this.mode) {
+      items.push(this.mode);
     }
     return items.join(' ');
   }
+  get mode() {
+    if (this.isDisabled) {
+      return 'disabled';
+    }
+    if (this.isCompleted) {
+      return 'completed';
+    }
+    if (this.isLocked) {
+      return 'locked';
+    }
+    return 'active';
+  }
   get isDisabled() {
-    return this.args.mode === 'disabled';
+    if (this.args.isAvailable === false) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   get isCompleted() {
-    return this.args.mode === 'completed';
+    return this.args.exercise.isCompleted;
   }
 
   get isActive() {
-    return this.args.mode === 'active';
+    return this.mode === 'active';
   }
 
   get isLocked() {
-    return this.args.mode === 'locked';
+    return !this.args.isAvailable;
   }
 
   get titleClasses() {
-    if (this.args.mode === 'locked') {
+    if (this.mode === 'locked') {
       return 'title title-locked';
     }
 
-    if (this.args.mode === 'disabled') {
+    if (this.mode === 'disabled') {
       return 'title title-disabled';
     }
     return 'title';

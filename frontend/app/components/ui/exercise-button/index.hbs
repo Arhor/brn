@@ -1,16 +1,13 @@
-<button
-  type="button"
+<a
   class="{{style-namespace "ui/exercise-button"}} {{this.classes}}"
-  disabled={{this.isDisabled}}
+  disabled={{not @isAvailable}}
+  href={{href-to "group.series.subgroup.exercise" @exercise.id}}
+  title={{concat (t "task_link.exercise") " " @exercise.level}}
   ...attributes
 >
-  {{#if (has-block)}}
-    {{yield}}
-  {{else}}
-    <div class={{this.titleClasses}}>
+  <div class={{this.titleClasses}}>
       {{@title}}
-    </div>
-  {{/if}}
+  </div>
   <div class="check-container">
     <Ui::Icon::Check
       @isCompleted={{this.isCompleted}}
@@ -19,4 +16,4 @@
       @isActive={{this.isActive}}
     />
   </div>
-</button>
+</a>
